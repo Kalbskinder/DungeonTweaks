@@ -3,9 +3,9 @@
 	"id": "dungeontweaks",
 	"version": "${version}",
 	"name": "dungeontweaks",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A simple Hypixel-Skyblock mods that adds utilities to dungeons.",
 	"authors": [
-		"Me!"
+		"Kalbskinder"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -13,11 +13,8 @@
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/dungeontweaks/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
-		"main": [
-			"net.kalbskinder.Dungeontweaks"
-		],
 		"client": [
 			"net.kalbskinder.DungeonTweaksClient"
 		]
