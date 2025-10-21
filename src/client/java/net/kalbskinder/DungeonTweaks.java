@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
 import net.minecraft.entity.LivingEntity;
 
-public class DungeonTweaksClient implements ClientModInitializer {
+public class DungeonTweaks implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {

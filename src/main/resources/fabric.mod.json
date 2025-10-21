@@ -16,7 +16,7 @@
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-			"net.kalbskinder.DungeonTweaksClient"
+			"net.kalbskinder.DungeonTweaks"
 		]
 	},
 	"depends": {
