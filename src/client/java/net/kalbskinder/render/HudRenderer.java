@@ -1,20 +1,31 @@
 package net.kalbskinder.render;
 
-import net.kalbskinder.dungeons.boss.SpiritBearTracker;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.text.Text;
 
+// Logging
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class HudRenderer {
+
+    private static final Logger LOGGER = LogManager.getLogger("dungeontweaks");
 
     public static void onHudRender(DrawContext drawContext, @SuppressWarnings("unused") RenderTickCounter tickCounter) {
 
         MinecraftClient client = MinecraftClient.getInstance();
         if (client == null) return;
 
-        SpiritBearTracker tracker = SpiritBearTracker.INSTANCE;
+        net.kalbskinder.dungeons.boss.SpiritBearTracker tracker = net.kalbskinder.dungeons.boss.SpiritBearTracker.INSTANCE;
+
+        // Sparse debug: once per second, print that the HUD render callback ran and whether a title is active
+        if (client.world != null && client.world.getTime() % 20L == 0L) {
+            LOGGER.debug("HudRenderer.onHudRender: activeTitle={}", tracker.hasActiveTitle());
+        }
+
         if (!tracker.hasActiveTitle()) return;
 
         Text title = tracker.getTitleText();
