@@ -1,4 +1,4 @@
-package net.kalbskinder;
+package net.kalbskinder.utils;
 
 /**
  * Utility to remove Minecraft color & format codes (e.g. §a, §6, §l).

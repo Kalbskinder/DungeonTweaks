@@ -1,5 +1,6 @@
-package net.kalbskinder;
+package net.kalbskinder.dungeons.boss;
 
+import net.kalbskinder.utils.NameUtils;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
