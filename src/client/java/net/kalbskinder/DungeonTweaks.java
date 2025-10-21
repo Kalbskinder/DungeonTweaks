@@ -3,6 +3,7 @@ package net.kalbskinder;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.fabric.api.message.v1.ServerMessageEvents;
 import net.kalbskinder.dungeons.boss.AnnounceSpiritBear;
@@ -28,7 +29,7 @@ public class DungeonTweaks implements ClientModInitializer {
         HudRenderCallback.EVENT.register(HudRenderer::onHudRender);
 
         // Listen for server game messages and forward them to the tracker
-        ServerMessageEvents.GAME_MESSAGE.register((client, message, overlay) -> {
+        ClientReceiveMessageEvents.GAME.register((message, overlay) -> {
             AnnounceSpiritBear.announce(message.getString());
         });
 

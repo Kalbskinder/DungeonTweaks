@@ -31,7 +31,6 @@ public class SpiritBearTracker {
         this.titleText = text;
         this.titleTicks = durationTicks;
         // Debug: log when a title is triggered
-        LOGGER.info("triggerTitle set: '{}' ticks={}", text.getString(), durationTicks);
     }
 
     /** Convenience overload using literal string. */
